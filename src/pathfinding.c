@@ -14,8 +14,9 @@ static void printSolvedPath(t_map *map, unsigned int *path, unsigned int len) {
     mx_printstr("\nDistance: ");
     if (len > 2) {
         for (unsigned int i = 1; i < len; i++) {
+            if (i != 1)
+                mx_printstr(" + ");
             mx_printint(map->mx[path[i - 1]][path[i]]); 
-            mx_printstr(" + ");
         }
         mx_printstr(" = ");
     }
